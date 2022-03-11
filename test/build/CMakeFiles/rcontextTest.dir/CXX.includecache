@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../../Rco/common/internal.h
+
+../../../Rco/core/details/context.h
+stdlib.h
+-
+
+../../../Rco/core/rcontext.h
+../common/internal.h
+../../../Rco/common/internal.h
+details/context.h
+../../../Rco/core/details/context.h
+cstdlib
+-
+memory
+-
+
+/home/Code/cppCode/Rco/test/rcontextTest.cpp
+core/rcontext.h
+-
+iostream
+-
+assert.h
+-
+
