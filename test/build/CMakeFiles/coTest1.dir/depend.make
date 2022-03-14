@@ -14,3 +14,9 @@ CMakeFiles/coTest1.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o: /home/Code/cpp
 CMakeFiles/coTest1.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o: /home/Code/cppCode/Rco/core/rcontext.cpp
 CMakeFiles/coTest1.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o: /home/Code/cppCode/Rco/core/rcontext.h
 
+CMakeFiles/coTest1.dir/home/Code/cppCode/Rco/task/task.cpp.o: /home/Code/cppCode/Rco/common/internal.h
+CMakeFiles/coTest1.dir/home/Code/cppCode/Rco/task/task.cpp.o: /home/Code/cppCode/Rco/core/details/context.h
+CMakeFiles/coTest1.dir/home/Code/cppCode/Rco/task/task.cpp.o: /home/Code/cppCode/Rco/core/rcontext.h
+CMakeFiles/coTest1.dir/home/Code/cppCode/Rco/task/task.cpp.o: /home/Code/cppCode/Rco/task/task.cpp
+CMakeFiles/coTest1.dir/home/Code/cppCode/Rco/task/task.cpp.o: /home/Code/cppCode/Rco/task/task.h
+

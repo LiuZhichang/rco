@@ -28,7 +28,7 @@ struct log {
 
 #define LOG_NAME_CAT(s1, s2) s1##s2
 #define LOG(at_start, at_finish) \
-	log LOG_NAME_CAT(s1,s2)(at_start, at_finish, __func__)
+	log LOG_NAME_CAT(__LOG,__LINE__)(at_start, at_finish, __func__)
 
 #define SIZE_1K 1024
 

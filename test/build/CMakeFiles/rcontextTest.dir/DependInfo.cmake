@@ -16,6 +16,7 @@ set(CMAKE_ASM_TARGET_INCLUDE_PATH
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/Code/cppCode/Rco/core/details/context.cpp" "/home/Code/cppCode/Rco/test/build/CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/core/details/context.cpp.o"
   "/home/Code/cppCode/Rco/core/rcontext.cpp" "/home/Code/cppCode/Rco/test/build/CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o"
+  "/home/Code/cppCode/Rco/task/task.cpp" "/home/Code/cppCode/Rco/test/build/CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/task/task.cpp.o"
   "/home/Code/cppCode/Rco/test/rcontextTest.cpp" "/home/Code/cppCode/Rco/test/build/CMakeFiles/rcontextTest.dir/rcontextTest.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

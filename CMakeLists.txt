@@ -5,7 +5,16 @@ project(rco)
 set(SRC
 
 	core/asm/context_jump.S
-	core/context.cpp
+	core/details/context.cpp
+	core/rcontext.cpp
+
+	task/task.cpp
+
+	scheduler/processer.cpp
+	scheduler/scheduler.cpp
+
+	cpc/channel.cpp
+
 	)
 
 enable_language(ASM)

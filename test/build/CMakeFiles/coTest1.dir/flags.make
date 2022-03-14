@@ -9,7 +9,7 @@ ASM_DEFINES =
 
 ASM_INCLUDES = -I/home/Code/cppCode/Rco/test/../../Rco 
 
-CXX_FLAGS =  
+CXX_FLAGS =   -std=gnu++14
 
 CXX_DEFINES = 
 
