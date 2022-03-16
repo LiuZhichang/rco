@@ -3,17 +3,25 @@
 
 #include <iostream>
 
+
 int main(int argc, char** argv) {
 
-	rco::RContext::GetCtx();
+	auto mainCtx = rco::RContext::GetCtx();
 
-	rco::Task task([&](){
-			std::cout << "execute task" << std::endl;
-			task.suspend();
-			}, 1024);
+	rco::Task task_func([&](){
 
-	task.resume();
-	
+			std::cout << "execute func" << std::endl;
+
+			rco::Task task([&](){
+					std::cout << "execute task" << std::endl;
+					task.suspend();
+					}, 1024);
+			task.resume();
+
+			task_func.suspend();
+			});
+	task_func.resume();
+
 	defer {
 		std::cout << "main finish" << std::endl;
 	};

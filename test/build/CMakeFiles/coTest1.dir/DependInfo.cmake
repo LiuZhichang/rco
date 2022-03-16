@@ -12,11 +12,13 @@ set(CMAKE_ASM_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_ASM_TARGET_INCLUDE_PATH
   "../../../Rco"
+  "../../third_party/jemalloc/include"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/Code/cppCode/Rco/test/cotest1.cpp" "/home/Code/cppCode/Rco/test/build/CMakeFiles/coTest1.dir/cotest1.cpp.o"
   "/home/Code/cppCode/Rco/core/details/context.cpp" "/home/Code/cppCode/Rco/test/build/CMakeFiles/coTest1.dir/home/Code/cppCode/Rco/core/details/context.cpp.o"
   "/home/Code/cppCode/Rco/core/rcontext.cpp" "/home/Code/cppCode/Rco/test/build/CMakeFiles/coTest1.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o"
+  "/home/Code/cppCode/Rco/cpc/channel.cpp" "/home/Code/cppCode/Rco/test/build/CMakeFiles/coTest1.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o"
   "/home/Code/cppCode/Rco/task/task.cpp" "/home/Code/cppCode/Rco/test/build/CMakeFiles/coTest1.dir/home/Code/cppCode/Rco/task/task.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
@@ -24,6 +26,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../../../Rco"
+  "../../third_party/jemalloc/include"
   )
 
 # Targets to which this target links.

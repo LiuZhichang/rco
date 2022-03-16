@@ -17,6 +17,13 @@ set(SRC
 
 	)
 
+set(CMAKE_CXX_FLAGS "-m32")
+
 enable_language(ASM)
+
+include_directories(./third_party/jemalloc/include)
+link_directories(./third_party/jemalloc/lib)
+
+target_link_libraries(${PROJECT_NAME} jemalloc)
 
 add_library(${PROJECT_NAME} ${SRC})

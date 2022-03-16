@@ -1,5 +1,6 @@
 /home/Code/cppCode/Rco/test/build/CMakeFiles/rebuild_cache.dir
 /home/Code/cppCode/Rco/test/build/CMakeFiles/edit_cache.dir
+/home/Code/cppCode/Rco/test/build/CMakeFiles/chTest.dir
 /home/Code/cppCode/Rco/test/build/CMakeFiles/taskTest.dir
 /home/Code/cppCode/Rco/test/build/CMakeFiles/rbufTestForThread.dir
 /home/Code/cppCode/Rco/test/build/CMakeFiles/rcontextTest.dir

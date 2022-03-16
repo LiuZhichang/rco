@@ -4,14 +4,17 @@
 
 #include "../common/internal.h"
 #include "../common/noncopyable.h"
+#include "../common/rcomem.h"
+
 #include "../core/rcontext.h"
+#include "../rcds/tsqueue.h"
 
 namespace rco {
 
 	class Processer;
 	class Switcher;
 
-	class Task : public Noncopyable{
+	class Task : public Noncopyable, public Intrusive_queue, public Shared_ref {
 		public:
 			typedef std::function<void()> Execute;
 

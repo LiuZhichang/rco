@@ -9,7 +9,7 @@ namespace rco {
 	class Spink_lock {
 		public:
 			Spink_lock()
-				: flag{flag} {
+				: flag{false} {
 
 				}
 

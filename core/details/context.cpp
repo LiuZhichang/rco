@@ -1,51 +1,56 @@
-
 #include "context.h"
 
+#include <assert.h>
 #include <cstring>
 
-void rco::core::context_init(Context& ctx) {
-	// 初始化为0
-	std::memset(&ctx, 0, sizeof(ctx));
-}
+#define REG_IDX_SP 0
+#define REG_IDX_AX 2
+#define REG_IDX_DI 4 
 
-void rco::core::context_make(Context& ctx, co_fn pfn, void* arg) {
-	// 如果协程没有申请空间，则什么也不做。一般用于主协程生成
-	if(!ctx.sp) {
+//----- --------
+// 32 bit
+// | regs[0]: esp |
+// | regs[1]: ebp |
+// | regs[2]: eax |
+// | regs[3]: ebx |
+// | regs[4]: edi |
+//
+//-------------
+// 64 bit
+// | regs[0]: rsp |
+// | regs[1]: rbp |
+// | regs[2]: rax |
+// | regs[3]: rbx |
+// | regs[4]: rdi |
+// | regs[5]: r12 |
+// | regs[6]: r13 |
+// | regs[7]: r14 |
+// | regs[8]: r15 |
+
+
+void rco::core::rco_make_context(Context* ctx,  Context::rco_func pfn, void* arg) {
+	assert(ctx);
+
+	if(!ctx->stack_ptr) {
 		return;
 	}
 
-	// 初始化栈指针
-	// ctx.sp 为申请内存之后的地址，即malloc后返回的地址
-	// ctx.ss 为申请的内存大小
-	// 这里用ctx.sp + ctx.ss 来模拟 函数栈帧开辟后的的栈顶指针寄存器存储的地址
-	// 
-	// 注意下图是堆内存，增长方向是从低地址到高地址
-	// ------------- -----> sp
-	// |		   |	
-	// |		   |
-	// |		   |
-	// |		   |		size: ctx.ss
-	// |		   |
-	// |		   |
-	// -------------  ----> ctx.sp
-	char* sp = ctx.sp + ctx.ss;
+	std::memset(ctx->regs, 0, sizeof(ctx->regs));
 
-	// 16位对齐
+	char* sp = nullptr;
+#if defined(__i386__)
+	sp = (char*)ctx->stack_ptr + ctx->stack_size - (sizeof(void*) << 1);
+#elif defined(__x86_64__)
+	sp = (char*)ctx->stack_ptr + ctx->stack_size;
+#endif
 	sp = (char*)((unsigned long)sp & -16LL);
+
+	ctx->regs[REG_IDX_SP] = sp;
 
 	void** ret = (void**)sp;
 
-	// sp指向pfn
-	// 即栈顶指针寄存器存储pfn的地址
-	// 这里用到了汇编ret指令：
-	//	ret用栈的数据修改IP的内容，实现近转移。
-	//	也就是说，当执行了ret指令后会将sp寄存器中的数据将会存放到ip寄存器中，
-	//	而ip寄存器存储下一条将要执行的指令地址，所以接下来将会执行 pfn
 	*ret = (void*)pfn;
 	
-	// 保存寄存器中的数据
-	// 结合 context_jump函数汇编实现
-	ctx.rsp = sp;
-	ctx.rax = ret;
-	ctx.rdi = arg;
+	ctx->regs[REG_IDX_AX] = *ret;
+	ctx->regs[REG_IDX_DI] = (void*)arg;
 }

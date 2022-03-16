@@ -7,11 +7,11 @@ ASM_FLAGS =
 
 ASM_DEFINES = 
 
-ASM_INCLUDES = -I/home/Code/cppCode/Rco/test/../../Rco 
+ASM_INCLUDES = -I/home/Code/cppCode/Rco/test/../../Rco -I/home/Code/cppCode/Rco/test/../third_party/jemalloc/include 
 
 CXX_FLAGS =   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/Code/cppCode/Rco/test/../../Rco 
+CXX_INCLUDES = -I/home/Code/cppCode/Rco/test/../../Rco -I/home/Code/cppCode/Rco/test/../third_party/jemalloc/include 
 

@@ -9,6 +9,8 @@ namespace rco {
 
 			Noncopyable& operator=(const Noncopyable& ) = delete;
 			Noncopyable& operator=(Noncopyable&& ) = delete;
+		protected:
+			Noncopyable() = default;
 	};
 
 }

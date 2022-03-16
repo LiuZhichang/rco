@@ -5,6 +5,10 @@
 #define RCO_NOEXCEPT  noexcept 
 #define RCO_CONSTEXPR constexpr
 
+#define aco_likely(x) (__builtin_expect(!!(x), 1))
+
+#define aco_unlikely(x) (__builtin_expect(!!(x), 0))
+
 #define RCO_CAS
 
 #if defined(__linux__)

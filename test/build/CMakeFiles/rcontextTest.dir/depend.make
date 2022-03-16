@@ -6,14 +6,32 @@ CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/core/asm/context_jump.S.o: /ho
 CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/core/details/context.cpp.o: /home/Code/cppCode/Rco/core/details/context.cpp
 CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/core/details/context.cpp.o: /home/Code/cppCode/Rco/core/details/context.h
 
+CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o: ../../third_party/jemalloc/include/jemalloc/jemalloc.h
 CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o: /home/Code/cppCode/Rco/common/internal.h
 CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o: /home/Code/cppCode/Rco/core/details/context.h
 CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o: /home/Code/cppCode/Rco/core/rcontext.cpp
 CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o: /home/Code/cppCode/Rco/core/rcontext.h
 
+CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/common/flags.h
+CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/common/internal.h
+CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/common/noncopyable.h
+CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/common/spinlock.h
+CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/cpc/channel.cpp
+CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/cpc/channel.h
+CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/rcds/cas_rbuf.h
+CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/rcds/intrusive_queue.h
+CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/rcds/tslist.h
+CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/rcds/tsqueue.h
+
 CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/task/task.cpp.o: /home/Code/cppCode/Rco/common/internal.h
+CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/task/task.cpp.o: /home/Code/cppCode/Rco/common/noncopyable.h
+CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/task/task.cpp.o: /home/Code/cppCode/Rco/common/rcomem.h
+CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/task/task.cpp.o: /home/Code/cppCode/Rco/common/spinlock.h
 CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/task/task.cpp.o: /home/Code/cppCode/Rco/core/details/context.h
 CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/task/task.cpp.o: /home/Code/cppCode/Rco/core/rcontext.h
+CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/task/task.cpp.o: /home/Code/cppCode/Rco/rcds/intrusive_queue.h
+CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/task/task.cpp.o: /home/Code/cppCode/Rco/rcds/tslist.h
+CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/task/task.cpp.o: /home/Code/cppCode/Rco/rcds/tsqueue.h
 CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/task/task.cpp.o: /home/Code/cppCode/Rco/task/task.cpp
 CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/task/task.cpp.o: /home/Code/cppCode/Rco/task/task.h
 

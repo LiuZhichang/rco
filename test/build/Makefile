@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named chTest
+
+# Build rule for target.
+chTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 chTest
+.PHONY : chTest
+
+# fast build rule for target.
+chTest/fast:
+	$(MAKE) -f CMakeFiles/chTest.dir/build.make CMakeFiles/chTest.dir/build
+.PHONY : chTest/fast
+
+#=============================================================================
 # Target rules for targets named taskTest
 
 # Build rule for target.
@@ -188,6 +201,33 @@ coTest/fast:
 	$(MAKE) -f CMakeFiles/coTest.dir/build.make CMakeFiles/coTest.dir/build
 .PHONY : coTest/fast
 
+chTest.o: chTest.cpp.o
+
+.PHONY : chTest.o
+
+# target to build an object file
+chTest.cpp.o:
+	$(MAKE) -f CMakeFiles/chTest.dir/build.make CMakeFiles/chTest.dir/chTest.cpp.o
+.PHONY : chTest.cpp.o
+
+chTest.i: chTest.cpp.i
+
+.PHONY : chTest.i
+
+# target to preprocess a source file
+chTest.cpp.i:
+	$(MAKE) -f CMakeFiles/chTest.dir/build.make CMakeFiles/chTest.dir/chTest.cpp.i
+.PHONY : chTest.cpp.i
+
+chTest.s: chTest.cpp.s
+
+.PHONY : chTest.s
+
+# target to generate assembly for a file
+chTest.cpp.s:
+	$(MAKE) -f CMakeFiles/chTest.dir/build.make CMakeFiles/chTest.dir/chTest.cpp.s
+.PHONY : chTest.cpp.s
+
 cotest.o: cotest.cpp.o
 
 .PHONY : cotest.o
@@ -248,6 +288,7 @@ home/Code/cppCode/Rco/core/asm/context_jump.o: home/Code/cppCode/Rco/core/asm/co
 
 # target to build an object file
 home/Code/cppCode/Rco/core/asm/context_jump.S.o:
+	$(MAKE) -f CMakeFiles/chTest.dir/build.make CMakeFiles/chTest.dir/home/Code/cppCode/Rco/core/asm/context_jump.S.o
 	$(MAKE) -f CMakeFiles/taskTest.dir/build.make CMakeFiles/taskTest.dir/home/Code/cppCode/Rco/core/asm/context_jump.S.o
 	$(MAKE) -f CMakeFiles/rbufTestForThread.dir/build.make CMakeFiles/rbufTestForThread.dir/home/Code/cppCode/Rco/core/asm/context_jump.S.o
 	$(MAKE) -f CMakeFiles/rcontextTest.dir/build.make CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/core/asm/context_jump.S.o
@@ -262,6 +303,7 @@ home/Code/cppCode/Rco/core/details/context.o: home/Code/cppCode/Rco/core/details
 
 # target to build an object file
 home/Code/cppCode/Rco/core/details/context.cpp.o:
+	$(MAKE) -f CMakeFiles/chTest.dir/build.make CMakeFiles/chTest.dir/home/Code/cppCode/Rco/core/details/context.cpp.o
 	$(MAKE) -f CMakeFiles/taskTest.dir/build.make CMakeFiles/taskTest.dir/home/Code/cppCode/Rco/core/details/context.cpp.o
 	$(MAKE) -f CMakeFiles/rbufTestForThread.dir/build.make CMakeFiles/rbufTestForThread.dir/home/Code/cppCode/Rco/core/details/context.cpp.o
 	$(MAKE) -f CMakeFiles/rcontextTest.dir/build.make CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/core/details/context.cpp.o
@@ -276,6 +318,7 @@ home/Code/cppCode/Rco/core/details/context.i: home/Code/cppCode/Rco/core/details
 
 # target to preprocess a source file
 home/Code/cppCode/Rco/core/details/context.cpp.i:
+	$(MAKE) -f CMakeFiles/chTest.dir/build.make CMakeFiles/chTest.dir/home/Code/cppCode/Rco/core/details/context.cpp.i
 	$(MAKE) -f CMakeFiles/taskTest.dir/build.make CMakeFiles/taskTest.dir/home/Code/cppCode/Rco/core/details/context.cpp.i
 	$(MAKE) -f CMakeFiles/rbufTestForThread.dir/build.make CMakeFiles/rbufTestForThread.dir/home/Code/cppCode/Rco/core/details/context.cpp.i
 	$(MAKE) -f CMakeFiles/rcontextTest.dir/build.make CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/core/details/context.cpp.i
@@ -290,6 +333,7 @@ home/Code/cppCode/Rco/core/details/context.s: home/Code/cppCode/Rco/core/details
 
 # target to generate assembly for a file
 home/Code/cppCode/Rco/core/details/context.cpp.s:
+	$(MAKE) -f CMakeFiles/chTest.dir/build.make CMakeFiles/chTest.dir/home/Code/cppCode/Rco/core/details/context.cpp.s
 	$(MAKE) -f CMakeFiles/taskTest.dir/build.make CMakeFiles/taskTest.dir/home/Code/cppCode/Rco/core/details/context.cpp.s
 	$(MAKE) -f CMakeFiles/rbufTestForThread.dir/build.make CMakeFiles/rbufTestForThread.dir/home/Code/cppCode/Rco/core/details/context.cpp.s
 	$(MAKE) -f CMakeFiles/rcontextTest.dir/build.make CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/core/details/context.cpp.s
@@ -304,6 +348,7 @@ home/Code/cppCode/Rco/core/rcontext.o: home/Code/cppCode/Rco/core/rcontext.cpp.o
 
 # target to build an object file
 home/Code/cppCode/Rco/core/rcontext.cpp.o:
+	$(MAKE) -f CMakeFiles/chTest.dir/build.make CMakeFiles/chTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o
 	$(MAKE) -f CMakeFiles/taskTest.dir/build.make CMakeFiles/taskTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o
 	$(MAKE) -f CMakeFiles/rbufTestForThread.dir/build.make CMakeFiles/rbufTestForThread.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o
 	$(MAKE) -f CMakeFiles/rcontextTest.dir/build.make CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o
@@ -318,6 +363,7 @@ home/Code/cppCode/Rco/core/rcontext.i: home/Code/cppCode/Rco/core/rcontext.cpp.i
 
 # target to preprocess a source file
 home/Code/cppCode/Rco/core/rcontext.cpp.i:
+	$(MAKE) -f CMakeFiles/chTest.dir/build.make CMakeFiles/chTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.i
 	$(MAKE) -f CMakeFiles/taskTest.dir/build.make CMakeFiles/taskTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.i
 	$(MAKE) -f CMakeFiles/rbufTestForThread.dir/build.make CMakeFiles/rbufTestForThread.dir/home/Code/cppCode/Rco/core/rcontext.cpp.i
 	$(MAKE) -f CMakeFiles/rcontextTest.dir/build.make CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.i
@@ -332,6 +378,7 @@ home/Code/cppCode/Rco/core/rcontext.s: home/Code/cppCode/Rco/core/rcontext.cpp.s
 
 # target to generate assembly for a file
 home/Code/cppCode/Rco/core/rcontext.cpp.s:
+	$(MAKE) -f CMakeFiles/chTest.dir/build.make CMakeFiles/chTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.s
 	$(MAKE) -f CMakeFiles/taskTest.dir/build.make CMakeFiles/taskTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.s
 	$(MAKE) -f CMakeFiles/rbufTestForThread.dir/build.make CMakeFiles/rbufTestForThread.dir/home/Code/cppCode/Rco/core/rcontext.cpp.s
 	$(MAKE) -f CMakeFiles/rcontextTest.dir/build.make CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.s
@@ -340,12 +387,58 @@ home/Code/cppCode/Rco/core/rcontext.cpp.s:
 	$(MAKE) -f CMakeFiles/coTest.dir/build.make CMakeFiles/coTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.s
 .PHONY : home/Code/cppCode/Rco/core/rcontext.cpp.s
 
+home/Code/cppCode/Rco/cpc/channel.o: home/Code/cppCode/Rco/cpc/channel.cpp.o
+
+.PHONY : home/Code/cppCode/Rco/cpc/channel.o
+
+# target to build an object file
+home/Code/cppCode/Rco/cpc/channel.cpp.o:
+	$(MAKE) -f CMakeFiles/chTest.dir/build.make CMakeFiles/chTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o
+	$(MAKE) -f CMakeFiles/taskTest.dir/build.make CMakeFiles/taskTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o
+	$(MAKE) -f CMakeFiles/rbufTestForThread.dir/build.make CMakeFiles/rbufTestForThread.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o
+	$(MAKE) -f CMakeFiles/rcontextTest.dir/build.make CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o
+	$(MAKE) -f CMakeFiles/coTest1.dir/build.make CMakeFiles/coTest1.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o
+	$(MAKE) -f CMakeFiles/rbufTest.dir/build.make CMakeFiles/rbufTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o
+	$(MAKE) -f CMakeFiles/coTest.dir/build.make CMakeFiles/coTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o
+.PHONY : home/Code/cppCode/Rco/cpc/channel.cpp.o
+
+home/Code/cppCode/Rco/cpc/channel.i: home/Code/cppCode/Rco/cpc/channel.cpp.i
+
+.PHONY : home/Code/cppCode/Rco/cpc/channel.i
+
+# target to preprocess a source file
+home/Code/cppCode/Rco/cpc/channel.cpp.i:
+	$(MAKE) -f CMakeFiles/chTest.dir/build.make CMakeFiles/chTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.i
+	$(MAKE) -f CMakeFiles/taskTest.dir/build.make CMakeFiles/taskTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.i
+	$(MAKE) -f CMakeFiles/rbufTestForThread.dir/build.make CMakeFiles/rbufTestForThread.dir/home/Code/cppCode/Rco/cpc/channel.cpp.i
+	$(MAKE) -f CMakeFiles/rcontextTest.dir/build.make CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.i
+	$(MAKE) -f CMakeFiles/coTest1.dir/build.make CMakeFiles/coTest1.dir/home/Code/cppCode/Rco/cpc/channel.cpp.i
+	$(MAKE) -f CMakeFiles/rbufTest.dir/build.make CMakeFiles/rbufTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.i
+	$(MAKE) -f CMakeFiles/coTest.dir/build.make CMakeFiles/coTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.i
+.PHONY : home/Code/cppCode/Rco/cpc/channel.cpp.i
+
+home/Code/cppCode/Rco/cpc/channel.s: home/Code/cppCode/Rco/cpc/channel.cpp.s
+
+.PHONY : home/Code/cppCode/Rco/cpc/channel.s
+
+# target to generate assembly for a file
+home/Code/cppCode/Rco/cpc/channel.cpp.s:
+	$(MAKE) -f CMakeFiles/chTest.dir/build.make CMakeFiles/chTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.s
+	$(MAKE) -f CMakeFiles/taskTest.dir/build.make CMakeFiles/taskTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.s
+	$(MAKE) -f CMakeFiles/rbufTestForThread.dir/build.make CMakeFiles/rbufTestForThread.dir/home/Code/cppCode/Rco/cpc/channel.cpp.s
+	$(MAKE) -f CMakeFiles/rcontextTest.dir/build.make CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.s
+	$(MAKE) -f CMakeFiles/coTest1.dir/build.make CMakeFiles/coTest1.dir/home/Code/cppCode/Rco/cpc/channel.cpp.s
+	$(MAKE) -f CMakeFiles/rbufTest.dir/build.make CMakeFiles/rbufTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.s
+	$(MAKE) -f CMakeFiles/coTest.dir/build.make CMakeFiles/coTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.s
+.PHONY : home/Code/cppCode/Rco/cpc/channel.cpp.s
+
 home/Code/cppCode/Rco/task/task.o: home/Code/cppCode/Rco/task/task.cpp.o
 
 .PHONY : home/Code/cppCode/Rco/task/task.o
 
 # target to build an object file
 home/Code/cppCode/Rco/task/task.cpp.o:
+	$(MAKE) -f CMakeFiles/chTest.dir/build.make CMakeFiles/chTest.dir/home/Code/cppCode/Rco/task/task.cpp.o
 	$(MAKE) -f CMakeFiles/taskTest.dir/build.make CMakeFiles/taskTest.dir/home/Code/cppCode/Rco/task/task.cpp.o
 	$(MAKE) -f CMakeFiles/rbufTestForThread.dir/build.make CMakeFiles/rbufTestForThread.dir/home/Code/cppCode/Rco/task/task.cpp.o
 	$(MAKE) -f CMakeFiles/rcontextTest.dir/build.make CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/task/task.cpp.o
@@ -360,6 +453,7 @@ home/Code/cppCode/Rco/task/task.i: home/Code/cppCode/Rco/task/task.cpp.i
 
 # target to preprocess a source file
 home/Code/cppCode/Rco/task/task.cpp.i:
+	$(MAKE) -f CMakeFiles/chTest.dir/build.make CMakeFiles/chTest.dir/home/Code/cppCode/Rco/task/task.cpp.i
 	$(MAKE) -f CMakeFiles/taskTest.dir/build.make CMakeFiles/taskTest.dir/home/Code/cppCode/Rco/task/task.cpp.i
 	$(MAKE) -f CMakeFiles/rbufTestForThread.dir/build.make CMakeFiles/rbufTestForThread.dir/home/Code/cppCode/Rco/task/task.cpp.i
 	$(MAKE) -f CMakeFiles/rcontextTest.dir/build.make CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/task/task.cpp.i
@@ -374,6 +468,7 @@ home/Code/cppCode/Rco/task/task.s: home/Code/cppCode/Rco/task/task.cpp.s
 
 # target to generate assembly for a file
 home/Code/cppCode/Rco/task/task.cpp.s:
+	$(MAKE) -f CMakeFiles/chTest.dir/build.make CMakeFiles/chTest.dir/home/Code/cppCode/Rco/task/task.cpp.s
 	$(MAKE) -f CMakeFiles/taskTest.dir/build.make CMakeFiles/taskTest.dir/home/Code/cppCode/Rco/task/task.cpp.s
 	$(MAKE) -f CMakeFiles/rbufTestForThread.dir/build.make CMakeFiles/rbufTestForThread.dir/home/Code/cppCode/Rco/task/task.cpp.s
 	$(MAKE) -f CMakeFiles/rcontextTest.dir/build.make CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/task/task.cpp.s
@@ -498,12 +593,16 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... chTest"
 	@echo "... taskTest"
 	@echo "... rbufTestForThread"
 	@echo "... rcontextTest"
 	@echo "... coTest1"
 	@echo "... rbufTest"
 	@echo "... coTest"
+	@echo "... chTest.o"
+	@echo "... chTest.i"
+	@echo "... chTest.s"
 	@echo "... cotest.o"
 	@echo "... cotest.i"
 	@echo "... cotest.s"
@@ -517,6 +616,9 @@ help:
 	@echo "... home/Code/cppCode/Rco/core/rcontext.o"
 	@echo "... home/Code/cppCode/Rco/core/rcontext.i"
 	@echo "... home/Code/cppCode/Rco/core/rcontext.s"
+	@echo "... home/Code/cppCode/Rco/cpc/channel.o"
+	@echo "... home/Code/cppCode/Rco/cpc/channel.i"
+	@echo "... home/Code/cppCode/Rco/cpc/channel.s"
 	@echo "... home/Code/cppCode/Rco/task/task.o"
 	@echo "... home/Code/cppCode/Rco/task/task.i"
 	@echo "... home/Code/cppCode/Rco/task/task.s"

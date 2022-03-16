@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/rbufTest.dir/home/Code/cppCode/Rco/core/asm/context_jump.S.o"
   "CMakeFiles/rbufTest.dir/home/Code/cppCode/Rco/core/details/context.cpp.o"
   "CMakeFiles/rbufTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o"
+  "CMakeFiles/rbufTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o"
   "CMakeFiles/rbufTest.dir/home/Code/cppCode/Rco/task/task.cpp.o"
   "CMakeFiles/rbufTest.dir/rbufTest.cpp.o"
   "rbufTest"

@@ -7,14 +7,32 @@ CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/core/details/context.cpp.o
  /home/Code/cppCode/Rco/core/details/context.cpp
  /home/Code/cppCode/Rco/core/details/context.h
 CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o
+ ../../third_party/jemalloc/include/jemalloc/jemalloc.h
  /home/Code/cppCode/Rco/common/internal.h
  /home/Code/cppCode/Rco/core/details/context.h
  /home/Code/cppCode/Rco/core/rcontext.cpp
  /home/Code/cppCode/Rco/core/rcontext.h
+CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o
+ /home/Code/cppCode/Rco/common/flags.h
+ /home/Code/cppCode/Rco/common/internal.h
+ /home/Code/cppCode/Rco/common/noncopyable.h
+ /home/Code/cppCode/Rco/common/spinlock.h
+ /home/Code/cppCode/Rco/cpc/channel.cpp
+ /home/Code/cppCode/Rco/cpc/channel.h
+ /home/Code/cppCode/Rco/rcds/cas_rbuf.h
+ /home/Code/cppCode/Rco/rcds/intrusive_queue.h
+ /home/Code/cppCode/Rco/rcds/tslist.h
+ /home/Code/cppCode/Rco/rcds/tsqueue.h
 CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/task/task.cpp.o
  /home/Code/cppCode/Rco/common/internal.h
+ /home/Code/cppCode/Rco/common/noncopyable.h
+ /home/Code/cppCode/Rco/common/rcomem.h
+ /home/Code/cppCode/Rco/common/spinlock.h
  /home/Code/cppCode/Rco/core/details/context.h
  /home/Code/cppCode/Rco/core/rcontext.h
+ /home/Code/cppCode/Rco/rcds/intrusive_queue.h
+ /home/Code/cppCode/Rco/rcds/tslist.h
+ /home/Code/cppCode/Rco/rcds/tsqueue.h
  /home/Code/cppCode/Rco/task/task.cpp
  /home/Code/cppCode/Rco/task/task.h
 CMakeFiles/rcontextTest.dir/rcontextTest.cpp.o

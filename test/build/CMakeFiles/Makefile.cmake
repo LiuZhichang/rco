@@ -48,6 +48,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
+  "CMakeFiles/chTest.dir/DependInfo.cmake"
   "CMakeFiles/taskTest.dir/DependInfo.cmake"
   "CMakeFiles/rbufTestForThread.dir/DependInfo.cmake"
   "CMakeFiles/rcontextTest.dir/DependInfo.cmake"

@@ -1,6 +1,8 @@
 #include "rcontext.h"
 #include "details/context.h"
 
+#include <jemalloc/jemalloc.h>
+
 #include <assert.h>
 
 struct ContextIniter {
@@ -13,12 +15,10 @@ struct ContextIniter {
 
 rco::RContext::RContext(rctx_fn pfn, void* arg, size_t stack_size) {
 
-	core::context_init(ctx);
+	ctx.stack_size = stack_size;
+	ctx.stack_ptr = (char*)malloc(stack_size);
 
-	ctx.ss = stack_size;
-	ctx.sp = (char*)malloc(stack_size);
-
-	core::context_make(ctx, pfn, arg);
+	core::rco_make_context(&ctx, pfn, arg);
 }
 
 rco::RContext::~RContext() {
@@ -27,12 +27,12 @@ rco::RContext::~RContext() {
 
 void rco::RContext::suspend() {
 //	assert(&GetCtx().ctx == &ctx);
-	core::context_jump(&ctx, &GetCtx().ctx);
+	core::rco_jump_context(&ctx, &GetCtx().ctx);
 }
 
 void rco::RContext::resume() {
 //	assert(&GetCtx().ctx == &ctx);
-	core::context_jump(&GetCtx().ctx, &ctx);
+	core::rco_jump_context(&GetCtx().ctx, &ctx);
 }
 
 rco::RContext& rco::RContext::GetCtx() {

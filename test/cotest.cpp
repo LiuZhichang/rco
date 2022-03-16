@@ -9,10 +9,9 @@ rco::core::Context ctx;
 	std::cout << __func__ << ":" << __LINE__ << "\t" << msg << std::endl;
 
 void alloc(rco::core::Context& ctx) {
-	rco::core::context_init(ctx);
 	size_t size = 1024;
-	ctx.ss = size;
-	ctx.sp = (char*)malloc(size);
+	ctx.stack_size= size;
+	ctx.stack_ptr = (void*)malloc(size);
 }
 
 void func(void* arg) {
@@ -20,10 +19,10 @@ void func(void* arg) {
 	log("func start");
 
 	log("func resume");
-	rco::core::context_jump(&ctx, &mainCtx);
+	rco::core::rco_jump_context(&ctx, &mainCtx);
 	log((char*)arg);
 	log("func resume");
-	rco::core::context_jump(&ctx, &mainCtx);
+	rco::core::rco_jump_context(&ctx, &mainCtx);
 
 	log("func finish");
 }
@@ -33,17 +32,16 @@ int main(int argc, char** argv) {
 	log("main start");
 
 //	alloc(mainCtx);
-	rco::core::context_init(mainCtx);
-	rco::core::context_make(mainCtx, nullptr, nullptr);
+	rco::core::rco_make_context(&mainCtx, nullptr, nullptr);
 
 	alloc(ctx);
 	char* message = "some message";
-	rco::core::context_make(ctx, func, (void*)message);
+	rco::core::rco_make_context(&ctx, func, (void*)message);
 
 	log("main resume");
-	rco::core::context_jump(&mainCtx, &ctx);
+	rco::core::rco_jump_context(&mainCtx, &ctx);
 	log("main resume");
-	rco::core::context_jump(&mainCtx, &ctx);
+	rco::core::rco_jump_context(&mainCtx, &ctx);
 	
 	log("main finish");
 

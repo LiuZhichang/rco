@@ -15,9 +15,18 @@ namespace rco {
 	namespace cas {
 
 
+		/**
+		 * @brief 无锁环形队列
+		 *
+		 * @tparam T
+		 */
 		template<typename T>
 			class LockFreeRingBuf {
 				public:
+					
+					/**
+					 * @brief 队列状态
+					 */
 					enum class State: Flag_type{
 						eSuccess = 0x01,
 						eEmpty   = 0x02,
@@ -45,6 +54,9 @@ namespace rco {
 					//					static_assert(N, "use default constructor must specify the size");
 					//				}
 
+					/**
+					 * @brief 析构函数，调用所有元素的析构函数并且释放内存
+					 */
 					~LockFreeRingBuf() {
 						uint64_t r_begin = consume(read.begin);
 						uint64_t r_end = consume(read.end);
@@ -56,6 +68,14 @@ namespace rco {
 						free(buffer);
 					}
 
+					/**
+					 * @brief 添加元素
+					 *
+					 * @tparam M 可选的move方法
+					 * @param[in] t M的实例 
+					 *
+					 * @return 状态位
+					 */
 					template<typename M>
 						FlagBits push(M &&t) {
 
@@ -67,8 +87,10 @@ namespace rco {
 
 								write_range.begin = relaxed(write.begin);
 								write_range.end = consume(write.end);
-
+								
+								// 如果写入区间大小为空，则队列已满
 								if (!write_range.has_free()) {
+									// 更新状态
 									state |= State::eFull;
 									return state;
 								}

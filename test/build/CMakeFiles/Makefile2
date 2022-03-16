@@ -53,6 +53,7 @@ CMAKE_BINARY_DIR = /home/Code/cppCode/Rco/test/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/chTest.dir/all
 all: CMakeFiles/taskTest.dir/all
 all: CMakeFiles/rbufTestForThread.dir/all
 all: CMakeFiles/rcontextTest.dir/all
@@ -68,6 +69,7 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/chTest.dir/clean
 clean: CMakeFiles/taskTest.dir/clean
 clean: CMakeFiles/rbufTestForThread.dir/clean
 clean: CMakeFiles/rcontextTest.dir/clean
@@ -78,18 +80,45 @@ clean: CMakeFiles/coTest.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/chTest.dir
+
+# All Build rule for target.
+CMakeFiles/chTest.dir/all:
+	$(MAKE) -f CMakeFiles/chTest.dir/build.make CMakeFiles/chTest.dir/depend
+	$(MAKE) -f CMakeFiles/chTest.dir/build.make CMakeFiles/chTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Code/cppCode/Rco/test/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target chTest"
+.PHONY : CMakeFiles/chTest.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/chTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 7
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/chTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 0
+.PHONY : CMakeFiles/chTest.dir/rule
+
+# Convenience name for target.
+chTest: CMakeFiles/chTest.dir/rule
+
+.PHONY : chTest
+
+# clean rule for target.
+CMakeFiles/chTest.dir/clean:
+	$(MAKE) -f CMakeFiles/chTest.dir/build.make CMakeFiles/chTest.dir/clean
+.PHONY : CMakeFiles/chTest.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/taskTest.dir
 
 # All Build rule for target.
 CMakeFiles/taskTest.dir/all:
 	$(MAKE) -f CMakeFiles/taskTest.dir/build.make CMakeFiles/taskTest.dir/depend
 	$(MAKE) -f CMakeFiles/taskTest.dir/build.make CMakeFiles/taskTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Code/cppCode/Rco/test/build/CMakeFiles --progress-num=31,32,33,34,35,36 "Built target taskTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Code/cppCode/Rco/test/build/CMakeFiles --progress-num=43,44,45,46,47,48,49 "Built target taskTest"
 .PHONY : CMakeFiles/taskTest.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/taskTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/taskTest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 0
 .PHONY : CMakeFiles/taskTest.dir/rule
@@ -111,12 +140,12 @@ CMakeFiles/taskTest.dir/clean:
 CMakeFiles/rbufTestForThread.dir/all:
 	$(MAKE) -f CMakeFiles/rbufTestForThread.dir/build.make CMakeFiles/rbufTestForThread.dir/depend
 	$(MAKE) -f CMakeFiles/rbufTestForThread.dir/build.make CMakeFiles/rbufTestForThread.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Code/cppCode/Rco/test/build/CMakeFiles --progress-num=19,20,21,22,23,24 "Built target rbufTestForThread"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Code/cppCode/Rco/test/build/CMakeFiles --progress-num=29,30,31,32,33,34,35 "Built target rbufTestForThread"
 .PHONY : CMakeFiles/rbufTestForThread.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/rbufTestForThread.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/rbufTestForThread.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 0
 .PHONY : CMakeFiles/rbufTestForThread.dir/rule
@@ -138,12 +167,12 @@ CMakeFiles/rbufTestForThread.dir/clean:
 CMakeFiles/rcontextTest.dir/all:
 	$(MAKE) -f CMakeFiles/rcontextTest.dir/build.make CMakeFiles/rcontextTest.dir/depend
 	$(MAKE) -f CMakeFiles/rcontextTest.dir/build.make CMakeFiles/rcontextTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Code/cppCode/Rco/test/build/CMakeFiles --progress-num=25,26,27,28,29,30 "Built target rcontextTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Code/cppCode/Rco/test/build/CMakeFiles --progress-num=36,37,38,39,40,41,42 "Built target rcontextTest"
 .PHONY : CMakeFiles/rcontextTest.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/rcontextTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/rcontextTest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 0
 .PHONY : CMakeFiles/rcontextTest.dir/rule
@@ -165,12 +194,12 @@ CMakeFiles/rcontextTest.dir/clean:
 CMakeFiles/coTest1.dir/all:
 	$(MAKE) -f CMakeFiles/coTest1.dir/build.make CMakeFiles/coTest1.dir/depend
 	$(MAKE) -f CMakeFiles/coTest1.dir/build.make CMakeFiles/coTest1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Code/cppCode/Rco/test/build/CMakeFiles --progress-num=7,8,9,10,11,12 "Built target coTest1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Code/cppCode/Rco/test/build/CMakeFiles --progress-num=15,16,17,18,19,20,21 "Built target coTest1"
 .PHONY : CMakeFiles/coTest1.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/coTest1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/coTest1.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 0
 .PHONY : CMakeFiles/coTest1.dir/rule
@@ -192,12 +221,12 @@ CMakeFiles/coTest1.dir/clean:
 CMakeFiles/rbufTest.dir/all:
 	$(MAKE) -f CMakeFiles/rbufTest.dir/build.make CMakeFiles/rbufTest.dir/depend
 	$(MAKE) -f CMakeFiles/rbufTest.dir/build.make CMakeFiles/rbufTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Code/cppCode/Rco/test/build/CMakeFiles --progress-num=13,14,15,16,17,18 "Built target rbufTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Code/cppCode/Rco/test/build/CMakeFiles --progress-num=22,23,24,25,26,27,28 "Built target rbufTest"
 .PHONY : CMakeFiles/rbufTest.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/rbufTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/rbufTest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 0
 .PHONY : CMakeFiles/rbufTest.dir/rule
@@ -219,12 +248,12 @@ CMakeFiles/rbufTest.dir/clean:
 CMakeFiles/coTest.dir/all:
 	$(MAKE) -f CMakeFiles/coTest.dir/build.make CMakeFiles/coTest.dir/depend
 	$(MAKE) -f CMakeFiles/coTest.dir/build.make CMakeFiles/coTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Code/cppCode/Rco/test/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target coTest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Code/cppCode/Rco/test/build/CMakeFiles --progress-num=8,9,10,11,12,13,14 "Built target coTest"
 .PHONY : CMakeFiles/coTest.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/coTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 7
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/coTest.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 0
 .PHONY : CMakeFiles/coTest.dir/rule
