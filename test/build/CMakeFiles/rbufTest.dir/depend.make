@@ -15,6 +15,7 @@ CMakeFiles/rbufTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o: /home/Code/cp
 CMakeFiles/rbufTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/common/flags.h
 CMakeFiles/rbufTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/common/internal.h
 CMakeFiles/rbufTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/common/noncopyable.h
+CMakeFiles/rbufTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/common/rcomem.h
 CMakeFiles/rbufTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/common/spinlock.h
 CMakeFiles/rbufTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/cpc/channel.cpp
 CMakeFiles/rbufTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/cpc/channel.h

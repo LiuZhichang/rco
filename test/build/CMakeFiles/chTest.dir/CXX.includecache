@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+/home/Code/cppCode/Rco/common/flags.h
+type_traits
+-
+initializer_list
+-
+cstdint
+-
+bitset
+-
+iostream
+-
+internal.h
+/home/Code/cppCode/Rco/common/internal.h
+
 /home/Code/cppCode/Rco/common/internal.h
 
 /home/Code/cppCode/Rco/common/noncopyable.h
@@ -42,6 +56,42 @@ cstdlib
 memory
 -
 
+/home/Code/cppCode/Rco/cpc/channel.cpp
+channel.h
+/home/Code/cppCode/Rco/cpc/channel.h
+
+/home/Code/cppCode/Rco/cpc/channel.h
+cstdint
+-
+../common/internal.h
+/home/Code/cppCode/Rco/common/internal.h
+../common/noncopyable.h
+/home/Code/cppCode/Rco/common/noncopyable.h
+../common/flags.h
+/home/Code/cppCode/Rco/common/flags.h
+../rcds/cas_rbuf.h
+/home/Code/cppCode/Rco/rcds/cas_rbuf.h
+../rcds/tsqueue.h
+/home/Code/cppCode/Rco/rcds/tsqueue.h
+
+/home/Code/cppCode/Rco/rcds/cas_rbuf.h
+atomic
+-
+bits/stdint-uintn.h
+-
+limits
+-
+utility
+-
+assert.h
+-
+iostream
+-
+../common/internal.h
+/home/Code/cppCode/Rco/common/internal.h
+../common/flags.h
+/home/Code/cppCode/Rco/common/flags.h
+
 /home/Code/cppCode/Rco/rcds/intrusive_queue.h
 assert.h
 -
@@ -49,6 +99,8 @@ assert.h
 /home/Code/cppCode/Rco/common/internal.h
 
 /home/Code/cppCode/Rco/rcds/tslist.h
+../common/rcomem.h
+/home/Code/cppCode/Rco/common/rcomem.h
 intrusive_queue.h
 /home/Code/cppCode/Rco/rcds/intrusive_queue.h
 type_traits
@@ -58,6 +110,8 @@ utility
 
 /home/Code/cppCode/Rco/rcds/tsqueue.h
 assert.h
+-
+bits/stdint-uintn.h
 -
 type_traits
 -
@@ -89,4 +143,10 @@ functional
 /home/Code/cppCode/Rco/core/rcontext.h
 ../rcds/tsqueue.h
 /home/Code/cppCode/Rco/rcds/tsqueue.h
+
+/home/Code/cppCode/Rco/test/chTest.cpp
+iostream
+-
+../cpc/channel.h
+/home/Code/cppCode/Rco/cpc/channel.h
 

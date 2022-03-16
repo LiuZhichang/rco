@@ -33,7 +33,7 @@ namespace rco {
 						eFull    = 0x04
 					};
 					using FlagBits = Flags<State>;
-					using atomic_t = std::atomic<uint64_t>;
+					using atomic_t = std::atomic<uint32_t>;
 
 
 					/**
@@ -41,7 +41,7 @@ namespace rco {
 					 *
 					 * @param[in] capacity 缓冲区容积
 					 */
-					explicit LockFreeRingBuf(uint64_t capacity)
+					explicit LockFreeRingBuf(uint32_t capacity)
 						: buf_capacity(capacity + 1)/*预留一个单元不存储*/
 						  , write(0, capacity)  /*可写范围为0,buf_cap -1*/
 						  , read(0, 0) {
@@ -58,8 +58,8 @@ namespace rco {
 					 * @brief 析构函数，调用所有元素的析构函数并且释放内存
 					 */
 					~LockFreeRingBuf() {
-						uint64_t r_begin = consume(read.begin);
-						uint64_t r_end = consume(read.end);
+						uint32_t r_begin = consume(read.begin);
+						uint32_t r_end = consume(read.end);
 
 						for (; r_begin < r_end; ++r_begin) {
 							buffer[r_begin].~T();
@@ -82,7 +82,7 @@ namespace rco {
 							FlagBits state;
 
 							// 1. 可写区间减去一个单元
-							Range <uint64_t> write_range;
+							Range <uint32_t> write_range;
 							do {
 
 								write_range.begin = relaxed(write.begin);
@@ -103,7 +103,7 @@ namespace rco {
 							new(buffer + write_range.begin) T(std::forward<M>(t));
 
 							// 3. 更新可读区间
-							uint64_t read_end;
+							uint32_t read_end;
 							do {
 								read_end = relaxed(read.end);
 							} while (!read.end.compare_exchange_weak(write_range.begin
@@ -124,7 +124,7 @@ namespace rco {
 						FlagBits state;
 
 						// 1. 写入区间缩小一个单元
-						Range<uint64_t> read_range;
+						Range<uint32_t> read_range;
 						do {
 							read_range.begin = relaxed(read.begin);
 							read_range.end = consume(read.end);
@@ -143,7 +143,7 @@ namespace rco {
 						buffer[read_range.begin].~T();
 						
 						// 3.更新写入范围
-						uint64_t check = (read.begin + buf_capacity - 1) % buf_capacity;
+						uint32_t check = (read.begin + buf_capacity - 1) % buf_capacity;
 						while(!write.end.compare_exchange_weak(check, read.begin
 									, std::memory_order_acq_rel, std::memory_order_relaxed));
 
@@ -159,7 +159,7 @@ namespace rco {
 					/**
 					 * @brief 读写范围, 闭区间 [begin, end]
 					 */
-					template<typename Type = atomic_t, typename ArgT = uint64_t>
+					template<typename Type = atomic_t, typename ArgT = uint32_t>
 						struct Range {
 							Type begin;
 							Type end;
@@ -191,11 +191,11 @@ namespace rco {
 					 *
 					 * @return
 					 */
-					RCO_INLINE uint64_t relaxed(atomic_t &value) {
+					RCO_INLINE uint32_t relaxed(atomic_t &value) {
 						return value.load(std::memory_order_relaxed);
 					}
 
-					RCO_INLINE uint64_t acquired(atomic_t &value) {
+					RCO_INLINE uint32_t acquired(atomic_t &value) {
 						return value.load(std::memory_order_relaxed);
 					}
 
@@ -210,7 +210,7 @@ namespace rco {
 					 *
 					 * @return
 					 */
-					RCO_INLINE uint64_t consume(atomic_t &value) {
+					RCO_INLINE uint32_t consume(atomic_t &value) {
 						return value.load(std::memory_order_consume);
 					}
 
@@ -219,7 +219,7 @@ namespace rco {
 					Range<atomic_t> write;
 					Range<atomic_t> read;
 
-					uint64_t buf_capacity;
+					uint32_t buf_capacity;
 					T *buffer;
 			};
 

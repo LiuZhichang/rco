@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named tslistTest
+
+# Build rule for target.
+tslistTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tslistTest
+.PHONY : tslistTest
+
+# fast build rule for target.
+tslistTest/fast:
+	$(MAKE) -f CMakeFiles/tslistTest.dir/build.make CMakeFiles/tslistTest.dir/build
+.PHONY : tslistTest/fast
+
+#=============================================================================
 # Target rules for targets named chTest
 
 # Build rule for target.
@@ -585,6 +598,33 @@ taskTest.cpp.s:
 	$(MAKE) -f CMakeFiles/taskTest.dir/build.make CMakeFiles/taskTest.dir/taskTest.cpp.s
 .PHONY : taskTest.cpp.s
 
+tslistTest.o: tslistTest.cpp.o
+
+.PHONY : tslistTest.o
+
+# target to build an object file
+tslistTest.cpp.o:
+	$(MAKE) -f CMakeFiles/tslistTest.dir/build.make CMakeFiles/tslistTest.dir/tslistTest.cpp.o
+.PHONY : tslistTest.cpp.o
+
+tslistTest.i: tslistTest.cpp.i
+
+.PHONY : tslistTest.i
+
+# target to preprocess a source file
+tslistTest.cpp.i:
+	$(MAKE) -f CMakeFiles/tslistTest.dir/build.make CMakeFiles/tslistTest.dir/tslistTest.cpp.i
+.PHONY : tslistTest.cpp.i
+
+tslistTest.s: tslistTest.cpp.s
+
+.PHONY : tslistTest.s
+
+# target to generate assembly for a file
+tslistTest.cpp.s:
+	$(MAKE) -f CMakeFiles/tslistTest.dir/build.make CMakeFiles/tslistTest.dir/tslistTest.cpp.s
+.PHONY : tslistTest.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -593,6 +633,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... tslistTest"
 	@echo "... chTest"
 	@echo "... taskTest"
 	@echo "... rbufTestForThread"
@@ -634,6 +675,9 @@ help:
 	@echo "... taskTest.o"
 	@echo "... taskTest.i"
 	@echo "... taskTest.s"
+	@echo "... tslistTest.o"
+	@echo "... tslistTest.i"
+	@echo "... tslistTest.s"
 .PHONY : help
 
 

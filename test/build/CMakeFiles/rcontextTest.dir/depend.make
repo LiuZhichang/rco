@@ -15,6 +15,7 @@ CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o: /home/Cod
 CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/common/flags.h
 CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/common/internal.h
 CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/common/noncopyable.h
+CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/common/rcomem.h
 CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/common/spinlock.h
 CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/cpc/channel.cpp
 CMakeFiles/rcontextTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/cpc/channel.h

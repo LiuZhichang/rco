@@ -36,3 +36,5 @@ add_executable(rbufTestForThread rbufTestForThread.cpp ${SRC})
 target_link_libraries(rbufTestForThread pthread)
 
 add_executable(chTest chTest.cpp ${SRC})
+
+add_executable(tslistTest tslistTest.cpp)

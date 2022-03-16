@@ -1,6 +1,9 @@
 #pragma once
 
+#include "../common/rcomem.h"
+
 #include "intrusive_queue.h"
+
 #include <type_traits>
 #include <utility>
 
@@ -106,7 +109,7 @@ namespace rco {
 			}
 
 			/**
-			 * @brief 赋值构造 
+			 * @brief 赋值构造
 			 *
 			 * @param[in] other list对象
 			 *
@@ -122,33 +125,40 @@ namespace rco {
 			}
 
 			/**
-			 * @brief
+			 * @brief 添加元素
 			 *
-			 * @param[in] other
+			 * @param[in] other list对象
 			 */
 			void append(TSList<T> && other) {
+				// 为空直接返回
 				if (other.empty())
 					return ;
 
+				// 自身为空则直接move
 				if (empty()) {
 					*this = std::move(other);
 					return ;
 				}
 
+				// 自身和目标list都有元素
+				// 尾部链接目标list头部
 				list_tail->link(other.list_head);
+				// 更新尾部
 				list_tail = other.list_tail;
+				// 更新元素个数
 				element_count += other.element_count;
+				// 目标链表重置
 				other.stealed();
 			}
 
 			/**
-			 * @brief
+			 * @brief 截取n个元素
 			 *
-			 * @param[in] n
+			 * @param[in] n 截取元素的个数
 			 *
-			 * @return
+			 * @return list对象，存储着截取的元素
 			 */
-			TSList<T> cut(std::size_t n) {
+			TSList<T>&& truncation(std::size_t n) {
 				if (empty()) return TSList<T>();
 
 				if (n >= size()) {
@@ -162,16 +172,17 @@ namespace rco {
 
 				TSList<T> o;
 				auto pos = list_head;
+				// 遍历到第n个元素
 				for (std::size_t i = 1; i < n; ++i)
 					pos = (T*)pos->next;
 				o.list_head = list_head;
 				o.list_tail = pos;
 				o.element_count = n;
-
+				// 更新状态
 				element_count -= n;
 				list_head = (T*)pos->next;
 				pos->unlink(list_head);
-				return o;
+				return std::move(o);
 			}
 
 			~TSList() {

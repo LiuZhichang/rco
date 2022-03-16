@@ -53,6 +53,7 @@ CMAKE_BINARY_DIR = /home/Code/cppCode/Rco/test/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/tslistTest.dir/all
 all: CMakeFiles/chTest.dir/all
 all: CMakeFiles/taskTest.dir/all
 all: CMakeFiles/rbufTestForThread.dir/all
@@ -69,6 +70,7 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/tslistTest.dir/clean
 clean: CMakeFiles/chTest.dir/clean
 clean: CMakeFiles/taskTest.dir/clean
 clean: CMakeFiles/rbufTestForThread.dir/clean
@@ -78,6 +80,33 @@ clean: CMakeFiles/rbufTest.dir/clean
 clean: CMakeFiles/coTest.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/tslistTest.dir
+
+# All Build rule for target.
+CMakeFiles/tslistTest.dir/all:
+	$(MAKE) -f CMakeFiles/tslistTest.dir/build.make CMakeFiles/tslistTest.dir/depend
+	$(MAKE) -f CMakeFiles/tslistTest.dir/build.make CMakeFiles/tslistTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/Code/cppCode/Rco/test/build/CMakeFiles --progress-num=50,51 "Built target tslistTest"
+.PHONY : CMakeFiles/tslistTest.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/tslistTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/tslistTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Code/cppCode/Rco/test/build/CMakeFiles 0
+.PHONY : CMakeFiles/tslistTest.dir/rule
+
+# Convenience name for target.
+tslistTest: CMakeFiles/tslistTest.dir/rule
+
+.PHONY : tslistTest
+
+# clean rule for target.
+CMakeFiles/tslistTest.dir/clean:
+	$(MAKE) -f CMakeFiles/tslistTest.dir/build.make CMakeFiles/tslistTest.dir/clean
+.PHONY : CMakeFiles/tslistTest.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/chTest.dir

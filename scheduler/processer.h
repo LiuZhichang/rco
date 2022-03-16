@@ -17,7 +17,7 @@ namespace rco {
 
 		Task*			running_task;
 		Task*			next_task;
-		
-		
+
+
 	};
 }

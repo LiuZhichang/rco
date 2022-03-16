@@ -16,6 +16,7 @@ CMakeFiles/rbufTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o
  /home/Code/cppCode/Rco/common/flags.h
  /home/Code/cppCode/Rco/common/internal.h
  /home/Code/cppCode/Rco/common/noncopyable.h
+ /home/Code/cppCode/Rco/common/rcomem.h
  /home/Code/cppCode/Rco/common/spinlock.h
  /home/Code/cppCode/Rco/cpc/channel.cpp
  /home/Code/cppCode/Rco/cpc/channel.h

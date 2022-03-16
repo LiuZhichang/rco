@@ -6,18 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../../third_party/jemalloc/include/jemalloc/jemalloc.h
-stdlib.h
--
-stdbool.h
--
-stdint.h
--
-limits.h
--
-strings.h
--
-
 /home/Code/cppCode/Rco/common/flags.h
 type_traits
 -
@@ -56,16 +44,6 @@ internal.h
 cstring
 -
 cstdint
--
-
-/home/Code/cppCode/Rco/core/rcontext.cpp
-rcontext.h
-/home/Code/cppCode/Rco/core/rcontext.h
-details/context.h
-/home/Code/cppCode/Rco/core/details/context.h
-jemalloc/jemalloc.h
--
-assert.h
 -
 
 /home/Code/cppCode/Rco/core/rcontext.h
@@ -121,6 +99,8 @@ assert.h
 /home/Code/cppCode/Rco/common/internal.h
 
 /home/Code/cppCode/Rco/rcds/tslist.h
+../common/rcomem.h
+/home/Code/cppCode/Rco/common/rcomem.h
 intrusive_queue.h
 /home/Code/cppCode/Rco/rcds/intrusive_queue.h
 type_traits
@@ -130,6 +110,8 @@ utility
 
 /home/Code/cppCode/Rco/rcds/tsqueue.h
 assert.h
+-
+bits/stdint-uintn.h
 -
 type_traits
 -

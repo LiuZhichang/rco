@@ -6,6 +6,7 @@ CMakeFiles/chTest.dir/home/Code/cppCode/Rco/core/asm/context_jump.S.o: /home/Cod
 CMakeFiles/chTest.dir/chTest.cpp.o: /home/Code/cppCode/Rco/common/flags.h
 CMakeFiles/chTest.dir/chTest.cpp.o: /home/Code/cppCode/Rco/common/internal.h
 CMakeFiles/chTest.dir/chTest.cpp.o: /home/Code/cppCode/Rco/common/noncopyable.h
+CMakeFiles/chTest.dir/chTest.cpp.o: /home/Code/cppCode/Rco/common/rcomem.h
 CMakeFiles/chTest.dir/chTest.cpp.o: /home/Code/cppCode/Rco/common/spinlock.h
 CMakeFiles/chTest.dir/chTest.cpp.o: /home/Code/cppCode/Rco/cpc/channel.h
 CMakeFiles/chTest.dir/chTest.cpp.o: /home/Code/cppCode/Rco/rcds/cas_rbuf.h
@@ -26,6 +27,7 @@ CMakeFiles/chTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o: /home/Code/cppC
 CMakeFiles/chTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/common/flags.h
 CMakeFiles/chTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/common/internal.h
 CMakeFiles/chTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/common/noncopyable.h
+CMakeFiles/chTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/common/rcomem.h
 CMakeFiles/chTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/common/spinlock.h
 CMakeFiles/chTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/cpc/channel.cpp
 CMakeFiles/chTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/cpc/channel.h
