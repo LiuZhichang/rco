@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/coTest.dir/home/Code/cppCode/Rco/core/details/context.cpp.o"
   "CMakeFiles/coTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o"
   "CMakeFiles/coTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o"
+  "CMakeFiles/coTest.dir/home/Code/cppCode/Rco/scheduler/processer.cpp.o"
   "CMakeFiles/coTest.dir/home/Code/cppCode/Rco/task/task.cpp.o"
   "coTest"
   "coTest.pdb"

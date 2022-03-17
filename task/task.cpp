@@ -4,20 +4,23 @@
 
 rco::Task::Task(Execute exec, size_t stack_size)
 	: ctx(&Task::DoWork, this, stack_size)
-	  , execute(std::move(exec)) {
+	, execute(std::move(exec))
+	, exec_state(State::eRunnable)
+	  , processer(nullptr)
+	  , unique_id(0){
 
 	  }
 
 rco::Task::~Task() {
-	
+
 }
 
-void rco::Task::suspend() {
-	ctx.suspend();
+void rco::Task::yield() {
+	ctx.swap_out();
 }
 
 void rco::Task::resume() {
-	ctx.resume();
+	ctx.swap_in();
 }
 
 void rco::Task::run() {
@@ -27,7 +30,7 @@ void rco::Task::run() {
 		execute = Execute();
 	}
 
-	state = State::eFinish;
+	exec_state = State::eFinish;
 }
 
 void rco::Task::DoWork(void* arg) {

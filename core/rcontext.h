@@ -20,8 +20,8 @@ namespace rco {
 			explicit RContext(rctx_fn pfn, void* arg, size_t stack_size);
 			~RContext();
 
-			void suspend();
-			void resume();
+			void swap_in();
+			void swap_out();
 
 			RCO_STATIC RContext& GetCtx();
 		private:

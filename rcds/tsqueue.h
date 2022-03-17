@@ -19,14 +19,14 @@ namespace rco {
 			static_assert(std::is_base_of<Intrusive_queue, T>::value, "template type must inherit Intrusive_queue");
 
 			public:
-			using lock_t = typename std::conditional<TSFlag, Spink_lock, Virtual_lock>;
-			using lock_guard = std::lock_guard<lock_t>;
+			using lock_t = typename std::conditional<TSFlag, Spink_lock, Virtual_lock>::type;
+			using lock_guard = typename std::conditional<TSFlag, std::lock_guard<lock_t>, Virtual_lock_guard>::type;
 
 			TSQueue()
 				: head(new Intrusive_queue)
 				  , tail(head)
 				  , count(0)
-				  , lock(own_lock){
+				  , lock(&own_lock){
 				  }
 
 			~TSQueue() {
@@ -62,7 +62,7 @@ namespace rco {
 			}
 
 			RCO_INLINE T* nolock_next(T* ptr) {
-				T* out = ptr->next;
+				T* out = (T*)ptr->next;
 				return out;
 			}
 
@@ -106,7 +106,7 @@ namespace rco {
 			RCO_INLINE void push(TSList<T> && elements) {
 				if(elements.empty()) return;
 				lock_guard scope_lock(*lock);
-				nolock_push(elements);
+				nolock_push(std::move(elements));
 			}
 
 			RCO_INLINE void nolock_push(TSList<T>&& elements) {
@@ -147,11 +147,14 @@ namespace rco {
 				return count;
 			}
 
-			RCO_INLINE TSList<T>&& trunc_front(uint32_t n) {
+			RCO_INLINE TSList<T> trunc_front(uint32_t n) {
 				if(head == tail) return TSList<T>();
 				lock_guard scope_lock(*lock);
+				return nolock_trunc_front(n);
+			}
+
+			TSList<T> nolock_trunc_front(uint32_t n) {
 				if(head == tail) return TSList<T>();
-				if(n > count) return TSList<T>(head->next, tail, count);
 
 				Intrusive_queue* first = head->next;
 				Intrusive_queue* last = first;
@@ -169,18 +172,17 @@ namespace rco {
 				first->prev = last->next = nullptr;
 				count -= cnt;
 
-				return std::move(TSList<T>(first, last, cnt));
+				return TSList<T>(first, last, cnt);
 			}
 
-			RCO_INLINE TSList<T>&& trunc_back(uint32_t n) {
+			RCO_INLINE TSList<T> trunc_back(uint32_t n) {
 				if(head == tail) return TSList<T>();
-
+				lock_guard scope_lock(*lock);
 				return nolock_trunc_back(n);
 			}
 
-			RCO_INLINE TSList<T>&& nolock_trunc_back(uint32_t n) {
+			TSList<T> nolock_trunc_back(uint32_t n) {
 				if(head == tail) return TSList<T>();
-				if(n > count) return TSList<T>(head->next, tail, count);
 
 				Intrusive_queue* last = tail;
 				Intrusive_queue* first = last;
@@ -194,16 +196,17 @@ namespace rco {
 				tail = first->prev;
 				first->prev = tail->next = nullptr;
 				count -= cnt;
-				return std::move(TSList<T>(first, last, cnt));
+				return TSList<T>(first, last, cnt);
 			}
 
-			RCO_INLINE TSList<T>&& pop_all() {
-				if(head == tail) return TSList<T>();
+			RCO_INLINE TSList<T> pop_all() {
+				if(head == tail) return std::move(TSList<T>());
+
 				lock_guard scope_lock(*lock);
 				return nolock_pop_all();
 			}
 
-			RCO_INLINE TSList<T>&& nolock_pop_all() {
+			TSList<T> nolock_pop_all() {
 				if(head == tail) return TSList<T>();
 				Intrusive_queue* first = head->next;
 				Intrusive_queue* last = tail;
@@ -216,19 +219,34 @@ namespace rco {
 				size_t cnt = count;
 				count = 0;
 
-				return std::move(TSList<T>(first, last, cnt));
+				return TSList<T>(first, last, cnt);
 			}
 
-			RCO_INLINE bool erase(T* element) {
+			RCO_INLINE void erase(T* element) {
 				lock_guard scope_lock(*lock);
-
+				nolock_erase(element);
 			}
 
-			RCO_INLINE bool nolock_erase(T* element, bool ref_count = true) {
+			void nolock_erase(T* element, bool ref_count = true) {
 				assert(element->prev != nullptr);
 				assert(element == tail || element->next != nullptr);
 
 				if(element->prev) element->prev->next = element->next;
+				if(element->next) {
+					element->next->prev = element->prev;
+				} else if(element == tail) {
+					tail = element->prev;
+				}
+
+				element->prev = element->next = nullptr;
+				assert(count > 0);
+				-- count;
+
+				if(ref_count) {
+					DecrementRef((T*)element);
+				}
+
+				// return true;
 			}
 
 			private:

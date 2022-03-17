@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/taskTest.dir/home/Code/cppCode/Rco/core/details/context.cpp.o"
   "CMakeFiles/taskTest.dir/home/Code/cppCode/Rco/core/rcontext.cpp.o"
   "CMakeFiles/taskTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o"
+  "CMakeFiles/taskTest.dir/home/Code/cppCode/Rco/scheduler/processer.cpp.o"
   "CMakeFiles/taskTest.dir/home/Code/cppCode/Rco/task/task.cpp.o"
   "CMakeFiles/taskTest.dir/taskTest.cpp.o"
   "taskTest"

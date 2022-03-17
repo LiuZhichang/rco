@@ -25,19 +25,19 @@ rco::RContext::~RContext() {
 
 }
 
-void rco::RContext::suspend() {
+void rco::RContext::swap_out() {
 //	assert(&GetCtx().ctx == &ctx);
 	core::rco_jump_context(&ctx, &GetCtx().ctx);
 }
 
-void rco::RContext::resume() {
+void rco::RContext::swap_in() {
 //	assert(&GetCtx().ctx == &ctx);
 	core::rco_jump_context(&GetCtx().ctx, &ctx);
 }
 
 rco::RContext& rco::RContext::GetCtx() {
-	RCO_STATIC thread_local ContextIniter s_ctx_initer;
+	RCO_STATIC thread_local ContextIniter s_tl_ctx_initer;
 
-	return s_ctx_initer.ctx;
+	return s_tl_ctx_initer.ctx;
 }
 

@@ -48,4 +48,10 @@ namespace rco {
 			}
 	};
 
+	class Virtual_lock_guard {
+		public:
+		template<typename Mutex_t>
+			explicit Virtual_lock_guard(Mutex_t&) {}
+	};
+
 }

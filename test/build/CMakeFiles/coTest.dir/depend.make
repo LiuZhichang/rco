@@ -27,6 +27,21 @@ CMakeFiles/coTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCod
 CMakeFiles/coTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/rcds/tslist.h
 CMakeFiles/coTest.dir/home/Code/cppCode/Rco/cpc/channel.cpp.o: /home/Code/cppCode/Rco/rcds/tsqueue.h
 
+CMakeFiles/coTest.dir/home/Code/cppCode/Rco/scheduler/processer.cpp.o: /home/Code/cppCode/Rco/common/internal.h
+CMakeFiles/coTest.dir/home/Code/cppCode/Rco/scheduler/processer.cpp.o: /home/Code/cppCode/Rco/common/noncopyable.h
+CMakeFiles/coTest.dir/home/Code/cppCode/Rco/scheduler/processer.cpp.o: /home/Code/cppCode/Rco/common/rcomem.h
+CMakeFiles/coTest.dir/home/Code/cppCode/Rco/scheduler/processer.cpp.o: /home/Code/cppCode/Rco/common/spinlock.h
+CMakeFiles/coTest.dir/home/Code/cppCode/Rco/scheduler/processer.cpp.o: /home/Code/cppCode/Rco/core/details/context.h
+CMakeFiles/coTest.dir/home/Code/cppCode/Rco/scheduler/processer.cpp.o: /home/Code/cppCode/Rco/core/rcontext.h
+CMakeFiles/coTest.dir/home/Code/cppCode/Rco/scheduler/processer.cpp.o: /home/Code/cppCode/Rco/rcds/intrusive_queue.h
+CMakeFiles/coTest.dir/home/Code/cppCode/Rco/scheduler/processer.cpp.o: /home/Code/cppCode/Rco/rcds/tslist.h
+CMakeFiles/coTest.dir/home/Code/cppCode/Rco/scheduler/processer.cpp.o: /home/Code/cppCode/Rco/rcds/tsqueue.h
+CMakeFiles/coTest.dir/home/Code/cppCode/Rco/scheduler/processer.cpp.o: /home/Code/cppCode/Rco/scheduler/processer.cpp
+CMakeFiles/coTest.dir/home/Code/cppCode/Rco/scheduler/processer.cpp.o: /home/Code/cppCode/Rco/scheduler/processer.h
+CMakeFiles/coTest.dir/home/Code/cppCode/Rco/scheduler/processer.cpp.o: /home/Code/cppCode/Rco/scheduler/runtime.h
+CMakeFiles/coTest.dir/home/Code/cppCode/Rco/scheduler/processer.cpp.o: /home/Code/cppCode/Rco/scheduler/scheduler.h
+CMakeFiles/coTest.dir/home/Code/cppCode/Rco/scheduler/processer.cpp.o: /home/Code/cppCode/Rco/task/task.h
+
 CMakeFiles/coTest.dir/home/Code/cppCode/Rco/task/task.cpp.o: /home/Code/cppCode/Rco/common/internal.h
 CMakeFiles/coTest.dir/home/Code/cppCode/Rco/task/task.cpp.o: /home/Code/cppCode/Rco/common/noncopyable.h
 CMakeFiles/coTest.dir/home/Code/cppCode/Rco/task/task.cpp.o: /home/Code/cppCode/Rco/common/rcomem.h
